@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thokala Vardhini — Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-color: #c5c6c7;
+            --heading-color: #ffffff;
+            --accent-color: #66fcf1;
+            --border-color: #45a29e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* Navigation Header */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(31, 40, 51, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .logo {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-size: 1.2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Dynamic Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70vh;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--heading-color);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(102, 252, 241, 0.2);
+            border: 1px solid rgba(102, 252, 241, 0.3);
+        }
+
+        /* Tech Stack & Skill Pills */
+        .skills-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--heading-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pill {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--heading-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .pill:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        /* Roadmap Grid Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Live Dispatch / Contact Form */
+        .contact-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 4rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: #0b0c10;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Vardhini.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="about">
+        <div class="hero-text">
+            <h2>HI, I'm VARDHINI</h2>
+            <h1 id="dynamic-role">TRUST & SAFETY ASSOCIATE</h1>
+            <p>Specializing in adaptive enforcement, digital content operations, prompt engineering, and technology solutions.</p>
+        </div>
+        <div class="hero-image">
+            <img src="your-photo.jpg" alt="Thokala Vardhini">
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">Technologies & Skills I Work With</h2>
+        <div class="pill-container">
+            <span class="pill">Python</span>
+            <span class="pill">Java</span>
+            <span class="pill">SQL</span>
+            <span class="pill">HTML / CSS</span>
+            <span class="pill">Prompt Engineering</span>
+            <span class="pill">Artificial Intelligence</span>
+            <span class="pill">MS Excel</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Policy Enforcement</span>
+        </div>
+    </section>
+
+    <section class="skills-section" id="expertise">
+        <h2 class="section-title">Core Execution Roadmap</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-tag">// 01 EXPERTISE</div>
+                <h3>Adaptive Enforcement & Safety</h3>
+                <p>Policy enforcement, content moderation, risk mitigation, and digital platform safety standard compliance.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag">// 02 EXPERTISE</div>
+                <h3>Software & AI Systems</h3>
+                <p>Leveraging AI workflows, machine learning concepts, and modern programming stacks for business solutions.</p>
+            </div>
+            <div class="card">
+                <div class="card-tag">// 03 EXPERTISE</div>
+                <h3>Digital Branding & Operations</h3>
+                <p>Community building, walk-in updates, and e-commerce brand management for targeted audiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title" style="margin-bottom:1rem;">Let's Build Something Exceptional</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <textarea rows="4" placeholder="Your Message..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Dispatch Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Hero Role Switcher Effect (simulating video interaction)
+        const roles = [
+            "TRUST & SAFETY ASSOCIATE",
+            "CREATIVE DEVELOPER",
+            "BUSINESS SUPPORT ENGINEER"
+        ];
+        let roleIndex = 0;
+        const roleElement = document.getElementById('dynamic-role');
+
+        setInterval(() => {
+            roleIndex = (roleIndex + 1) % roles.length;
+            roleElement.style.opacity = 0;
+            setTimeout(() => {
+                roleElement.textContent = roles[roleIndex];
+                roleElement.style.opacity = 1;
+            }, 300);
+        }, 3000);
+    </script>
+</body>
+</html>
